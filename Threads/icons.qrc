@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>iconfinder_folder_299060.ico</file>
+        <file>machineVision.ico</file>
     </qresource>
 </RCC>

@@ -26,10 +26,12 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        threads.cpp
+        threads.cpp \
+    notepad.cpp
 
 HEADERS += \
-        threads.h
+        threads.h \
+    notepad.h
 
 FORMS += \
         threads.ui

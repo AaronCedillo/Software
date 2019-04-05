@@ -2,6 +2,7 @@
 #include "ui_threads.h"
 
 #include "QFileDialog"
+#include "QDebug"
 
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
@@ -22,8 +23,13 @@ Threads::~Threads()
 
 void Threads::on_Open_clicked()
 {
-    QFileDialog::getExistingDirectory(this, tr("Open Directory"),
+    QString Dir = QFileDialog::getExistingDirectory(this, tr("Open Directory"),
                                       "/home",
                                       QFileDialog::ShowDirsOnly |
                                       QFileDialog::DontResolveSymlinks);
+    QDir Directory(Dir);
+
+    foreach(QFileInfo images, Directory.entryInfoList()){
+        qDebug() << images.completeBaseName() + "." + images.suffix();
+    }
 }

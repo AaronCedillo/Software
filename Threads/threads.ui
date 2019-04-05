@@ -24,10 +24,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>Folder</string>
+     <string>Procesamiento</string>
     </property>
     <property name="icon">
-     <iconset theme=":/iconfinder_folder_299060.ico"/>
+     <iconset theme=":/machineVision.ico"/>
     </property>
    </widget>
   </widget>
