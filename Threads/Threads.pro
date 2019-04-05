@@ -34,6 +34,14 @@ HEADERS += \
 FORMS += \
         threads.ui
 
+win32 {
+    CONFIG(release, debug|release): LIBS += -LC:/opencv/x86/vc12/lib -lopencv_core2413 -lopencv_imgproc2413 -lopencv_highgui2413
+    CONFIG(debug, debug|release): LIBS += -LC:/opencv/x86/vc12/lib -lopencv_core2413d  -lopencv_imgproc2413d -lopencv_highgui2413d
+
+    INCLUDEPATH += C:/opencv/include
+    DEPENDPATH += C:/opencv/include
+}
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
