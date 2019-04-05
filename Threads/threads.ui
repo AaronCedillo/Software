@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>760</width>
-    <height>406</height>
+    <width>398</width>
+    <height>178</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,14 +17,17 @@
    <widget class="QPushButton" name="Open">
     <property name="geometry">
      <rect>
-      <x>670</x>
-      <y>320</y>
-      <width>80</width>
-      <height>21</height>
+      <x>280</x>
+      <y>120</y>
+      <width>111</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>ClickMe</string>
+     <string>Folder</string>
+    </property>
+    <property name="icon">
+     <iconset theme=":/iconfinder_folder_299060.ico"/>
     </property>
    </widget>
   </widget>
@@ -33,7 +36,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>760</width>
+     <width>398</width>
      <height>20</height>
     </rect>
    </property>
@@ -46,7 +49,6 @@
     <bool>false</bool>
    </attribute>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

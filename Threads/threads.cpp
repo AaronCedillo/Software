@@ -12,6 +12,7 @@ Threads::Threads(QWidget *parent) :
     ui(new Ui::Threads)
 {
     ui->setupUi(this);
+
 }
 
 Threads::~Threads()
@@ -21,5 +22,8 @@ Threads::~Threads()
 
 void Threads::on_Open_clicked()
 {
-
+    QFileDialog::getExistingDirectory(this, tr("Open Directory"),
+                                      "/home",
+                                      QFileDialog::ShowDirsOnly |
+                                      QFileDialog::DontResolveSymlinks);
 }
