@@ -1,0 +1,11 @@
+Add OpenCV Paths in Qt
+1.- In "Projects" option in Qt, select "Details" in "Build Enviroment".
+
+
+2.- Find "path", here you can see something like this "C:\Users\".
+
+
+3.- Here you need to paste the path where you have the OpenCV library. "C:\opencv\x86\vc10\bin" and "C:\opencv\x86\vc10\lib".
+
+
+4.- "C:\opencv\x86\vc10\bin;C:\Users\". and in the end of the path ";C:\opencv\x86\vc12\bin;".
