@@ -27,6 +27,7 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         threads.cpp
+//hola
 
 HEADERS += \
         threads.h
