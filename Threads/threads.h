@@ -6,6 +6,7 @@
 namespace Ui {
 class Threads;
 }
+class NotePad;
 
 class Threads : public QMainWindow
 {
@@ -18,8 +19,9 @@ public:
 private slots:
     void on_Open_clicked();
 
-private:
+public:
     Ui::Threads *ui;
+    NotePad *mPaths;
 };
 
 #endif // THREADS_H

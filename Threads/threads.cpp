@@ -1,5 +1,6 @@
 #include "threads.h"
 #include "ui_threads.h"
+#include "notepad.h"
 
 #include "QFileDialog"
 #include "QDebug"
@@ -13,6 +14,7 @@ Threads::Threads(QWidget *parent) :
     ui(new Ui::Threads)
 {
     ui->setupUi(this);
+    mPaths = new NotePad(100, this);
 
 }
 
@@ -24,12 +26,11 @@ Threads::~Threads()
 void Threads::on_Open_clicked()
 {
     QString Dir = QFileDialog::getExistingDirectory(this, tr("Open Directory"),
-                                      "/home",
-                                      QFileDialog::ShowDirsOnly |
-                                      QFileDialog::DontResolveSymlinks);
+                                                    "/home",
+                                                    QFileDialog::ShowDirsOnly |
+                                                    QFileDialog::DontResolveSymlinks);
     QDir Directory(Dir);
+    mPaths -> ImagesPaths = Directory;
 
-    foreach(QFileInfo images, Directory.entryInfoList()){
-        qDebug() << images.completeBaseName() + "." + images.suffix();
-    }
+    mPaths -> start();
 }

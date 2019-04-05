@@ -1,14 +1,20 @@
 #ifndef NOTEPAD_H
 #define NOTEPAD_H
 
-#include <QObject>
+#include <QThread>
 
-class NotePad : public QObject
+#include "QDir"
+
+class NotePad : public QThread
 {
     Q_OBJECT
 public:
-    explicit NotePad(QObject *parent = nullptr);
+    explicit NotePad(int Tiempo, QObject *parent = nullptr);
 
+    int mTiempo;
+    QDir ImagesPaths;
+
+    void run() override;
 signals:
 
 public slots:
