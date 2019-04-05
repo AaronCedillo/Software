@@ -2,5 +2,7 @@
     <qresource prefix="/">
         <file>iconfinder_folder_299060.ico</file>
         <file>machineVision.ico</file>
+        <file>Notepad.ico</file>
+        <file>password.ico</file>
     </qresource>
 </RCC>

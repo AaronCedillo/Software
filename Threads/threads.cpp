@@ -1,6 +1,7 @@
 #include "threads.h"
 #include "ui_threads.h"
 #include "notepad.h"
+#include "password.h"
 
 #include "QFileDialog"
 #include "QDebug"
@@ -14,8 +15,8 @@ Threads::Threads(QWidget *parent) :
     ui(new Ui::Threads)
 {
     ui->setupUi(this);
-    mPaths = new NotePad(100, this);
 
+    mPaths = new NotePad(100, this);
 }
 
 Threads::~Threads()
@@ -33,4 +34,10 @@ void Threads::on_Open_clicked()
     mPaths -> ImagesPaths = Directory;
 
     mPaths -> start();
+}
+
+void Threads::on_actionImages_triggered()
+{
+    PassWord P(this);
+    P.exec();
 }

@@ -15,6 +15,9 @@ public:
     explicit PassWord(QWidget *parent = nullptr);
     ~PassWord();
 
+private slots:
+    void on_PassWord_2_returnPressed();
+
 private:
     Ui::PassWord *ui;
 };

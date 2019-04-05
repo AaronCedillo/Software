@@ -27,14 +27,19 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         threads.cpp \
-    notepad.cpp
+    notepad.cpp \
+    password.cpp
 
 HEADERS += \
         threads.h \
-    notepad.h
+    notepad.h \
+    password.h
 
 FORMS += \
-        threads.ui
+        threads.ui \
+    password.ui
+
+RC_ICONS = ArtificialIntelligence.ico
 
 win32 {
     CONFIG(release, debug|release): LIBS += -LC:/opencv/x86/vc12/lib -lopencv_core2413 -lopencv_imgproc2413 -lopencv_highgui2413

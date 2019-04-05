@@ -19,6 +19,8 @@ public:
 private slots:
     void on_Open_clicked();
 
+    void on_actionImages_triggered();
+
 public:
     Ui::Threads *ui;
     NotePad *mPaths;
