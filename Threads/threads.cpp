@@ -12,3 +12,8 @@ Threads::~Threads()
 {
     delete ui;
 }
+
+void Threads::on_Open_clicked()
+{
+
+}

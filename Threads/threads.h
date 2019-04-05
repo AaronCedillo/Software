@@ -15,6 +15,9 @@ public:
     explicit Threads(QWidget *parent = nullptr);
     ~Threads();
 
+private slots:
+    void on_Open_clicked();
+
 private:
     Ui::Threads *ui;
 };
