@@ -4,5 +4,8 @@
         <file>machineVision.ico</file>
         <file>Notepad.ico</file>
         <file>password.ico</file>
+        <file>about.ico</file>
+        <file>delete.ico</file>
+        <file>edit.ico</file>
     </qresource>
 </RCC>

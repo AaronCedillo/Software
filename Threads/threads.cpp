@@ -36,7 +36,13 @@ void Threads::on_Open_clicked()
     mPaths -> start();
 }
 
-void Threads::on_actionImages_triggered()
+void Threads::on_actionEditarTexto_triggered()
+{
+    PassWord P(this);
+    P.exec();
+}
+
+void Threads::on_actionBorrar_triggered()
 {
     PassWord P(this);
     P.exec();

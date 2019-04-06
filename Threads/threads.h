@@ -19,7 +19,9 @@ public:
 private slots:
     void on_Open_clicked();
 
-    void on_actionImages_triggered();
+    void on_actionEditarTexto_triggered();
+
+    void on_actionBorrar_triggered();
 
 public:
     Ui::Threads *ui;
