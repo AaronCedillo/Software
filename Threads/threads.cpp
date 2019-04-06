@@ -25,14 +25,13 @@ Threads::~Threads()
 }
 
 void Threads::on_Open_clicked()
-{
+{    
     QString Dir = QFileDialog::getExistingDirectory(this, tr("Open Directory"),
                                                     "/home",
                                                     QFileDialog::ShowDirsOnly |
                                                     QFileDialog::DontResolveSymlinks);
     QDir Directory(Dir);
     mPaths -> ImagesPaths = Directory;
-
     mPaths -> start();
 }
 

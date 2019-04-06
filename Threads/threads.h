@@ -25,7 +25,7 @@ private slots:
 
 public:
     Ui::Threads *ui;
-    NotePad *mPaths;
+    NotePad *mPaths;    
 };
 
 #endif // THREADS_H
