@@ -3,6 +3,7 @@
 
 #include "QDebug"
 #include "QFile"
+#include "QDirIterator"
 #include "QFileDialog"
 
 NotePad::NotePad(int Tiempo, QObject *parent) : QThread(parent)
@@ -13,18 +14,18 @@ NotePad::NotePad(int Tiempo, QObject *parent) : QThread(parent)
 void NotePad::run(){
 
     QFile arch;
-    QString name = "C:/images.txt";
+    QString name = "images.txt";
     arch.setFileName(name);
     arch.open(QIODevice::WriteOnly | QIODevice::Text);
 
-    foreach(QFileInfo Images, ImagesPaths.entryInfoList()){
+    QDirIterator Dir(ImagesPaths, QDir::Files | QDir::Dirs |QDir::NoDotAndDotDot);
+
+    while(Dir.hasNext())
+    {
+        Dir.next();
         QTextStream stream(&arch);
 
-        QString Files = Images.completeBaseName() + "." + Images.suffix();
-
-        stream << Files;
+        stream << Dir.fileName() << endl;
         arch.flush();
-        //arch.close();
-        //qDebug() << Images.completeBaseName() + "." + Images.suffix();
     }
 }

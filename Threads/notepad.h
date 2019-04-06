@@ -12,7 +12,7 @@ public:
     explicit NotePad(int Tiempo, QObject *parent = nullptr);
 
     int mTiempo;
-    QDir ImagesPaths;
+    QString ImagesPaths;
 
     void run() override;
 signals:

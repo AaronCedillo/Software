@@ -30,8 +30,7 @@ void Threads::on_Open_clicked()
                                                     "/home",
                                                     QFileDialog::ShowDirsOnly |
                                                     QFileDialog::DontResolveSymlinks);
-    QDir Directory(Dir);
-    mPaths -> ImagesPaths = Directory;
+    mPaths -> ImagesPaths = Dir;
     mPaths -> start();
 }
 
