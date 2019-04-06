@@ -18,14 +18,13 @@ void NotePad::run(){
     arch.setFileName(name);
     arch.open(QIODevice::WriteOnly | QIODevice::Text);
 
-    QDirIterator Dir(ImagesPaths, QDir::Files | QDir::Dirs |QDir::NoDotAndDotDot);
+    QDirIterator Directory(ImagesPaths, QDir::Files | QDir::Dirs |QDir::NoDotAndDotDot);
 
-    while(Dir.hasNext())
-    {
-        Dir.next();
+    while(Directory.hasNext()) {
+        Directory.next();
         QTextStream stream(&arch);
 
-        stream << Dir.fileName() << endl;
+        stream << Directory.fileName() << endl;
         arch.flush();
     }
 }

@@ -3,6 +3,7 @@
 
 #include "QDebug"
 #include "QMessageBox"
+#include "QFile"
 
 PassWord::PassWord(QWidget *parent) :
     QDialog(parent),
@@ -28,10 +29,15 @@ PassWord::~PassWord()
 
 void PassWord::on_PassWord_2_returnPressed()
 {
-    if(ui -> PassWord_2 -> text() != "1234"){
+    if(ui -> PassWord_2 -> text() != "1234") {
         QMessageBox::warning(this, "Error", "Contraseña Incorrecta");
-    }
-    else {
+    } else {
         PassWord::close();
     }
+
+    QString filename = "images.txt";
+    QFile file(filename);
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+    qDebug() << file.readAll();
+    //file.close();
 }

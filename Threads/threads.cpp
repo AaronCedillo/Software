@@ -14,7 +14,12 @@ Threads::Threads(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Threads)
 {
-    ui->setupUi(this);
+    ui -> setupUi(this);
+
+    ui -> textEdit -> hide();
+
+    ui -> Open -> setGeometry(280, 120, 111, 31);
+
 
     mPaths = new NotePad(100, this);
 }
@@ -38,6 +43,23 @@ void Threads::on_actionEditarTexto_triggered()
 {
     PassWord P(this);
     P.exec();
+
+    if(P.close()) {
+
+        ui -> textEdit->show();
+        Threads::resize(391,342);
+        ui -> Open -> setGeometry(280, 250, 111, 31);
+
+        QString filename = "C:/images.txt";
+        QFile fileToOpen;
+        fileToOpen.setFileName(filename);
+
+        fileToOpen.open(QIODevice::ReadOnly | QIODevice::Text);
+
+        QTextStream streams(&fileToOpen);
+        QString Text = streams.readAll();
+        ui -> textEdit -> setText(Text + "   ");
+    }
 }
 
 void Threads::on_actionBorrar_triggered()
