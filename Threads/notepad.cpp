@@ -1,4 +1,5 @@
 #include "notepad.h"
+#include "notepad.h"
 
 #include "QDebug"
 #include "QFile"
@@ -17,11 +18,12 @@ void NotePad::run(){
     arch.open(QIODevice::WriteOnly | QIODevice::Text);
 
     foreach(QFileInfo Images, ImagesPaths.entryInfoList()){
+        QTextStream stream(&arch);
 
         QString Files = Images.completeBaseName() + "." + Images.suffix();
-        qDebug() << Files;
-        //arch.write(Files.toUtf8());
-        //arch.flush();
+
+        stream << Files;
+        arch.flush();
         //arch.close();
         //qDebug() << Images.completeBaseName() + "." + Images.suffix();
     }
