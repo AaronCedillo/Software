@@ -58,7 +58,7 @@ void Threads::on_actionEditarTexto_triggered()
 
         QTextStream streams(&fileToOpen);
         QString Text = streams.readAll();
-        ui -> textEdit -> setText(Text + "   ");
+        ui -> textEdit -> setText(Text);
     }
 }
 
@@ -66,4 +66,11 @@ void Threads::on_actionBorrar_triggered()
 {
     PassWord P(this);
     P.exec();
+
+    if(P.close()) {
+        Threads::resize(391, 209);
+        ui -> textEdit -> hide();
+        ui -> Open -> setGeometry(280, 120, 111, 31);
+
+    }
 }
