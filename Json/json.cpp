@@ -21,7 +21,34 @@ Json::~Json()
 
 void Json::on_Open_clicked()
 {
+    QString json_filter = "json (*.json)";
+    QString nombre_archivo = QFileDialog::getOpenFileName(this, tr("Abrir Archivo"), "/",
+                                                          tr("Cualquier archivo (*);;%1").arg(json_filter), &json_filter,
+                                                          QFileDialog::DontUseNativeDialog);
+    if(nombre_archivo.isEmpty()){
+    } else {
+        QJsonDocument doc;
+        QJsonObject obj;
+        QByteArray data_json;
+        QFile input(nombre_archivo);
 
+        if(input.open(QIODevice::ReadOnly | QIODevice::Text)) {
+            data_json = input.readAll();
+            doc = doc.fromJson(data_json);
+            obj = doc.object();
+            QDate Fecha = QDate::fromString(obj["Fecha"].toString());
+            QDateTime Hora = QDateTime::fromString(obj["Hora"].toString());
+            const int Valor = obj["Valor"].toInt();
+
+            ui -> Date -> setDate(Fecha);
+            ui -> Time -> setDateTime(Hora);
+            ui -> Value -> setValue(Valor);
+
+            QMessageBox::information(this, tr("Mensaje"), tr("Documento leido correctamente") );
+        }  else {
+            QMessageBox::critical(this, tr("Error"), input.errorString());
+        }
+    }
 }
 
 void Json::on_Save_clicked()
