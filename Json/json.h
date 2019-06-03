@@ -15,6 +15,11 @@ public:
     explicit Json(QWidget *parent = nullptr);
     ~Json();
 
+private slots:
+    void on_Open_clicked();
+
+    void on_Save_clicked();
+
 private:
     Ui::Json *ui;
 };
